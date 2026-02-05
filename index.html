@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta property="og:title" content="Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis"/>
+  <meta property="og:url" content="https://seoneun.github.io/BiPO-page/"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWRYSDM25P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWRYSDM25P');
+</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/icon2.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="column has-text-centered">
+        <h1 class="title is-1 publication-title">Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis</h1>
+        <div class="is-size-3 publication-authors">
+          ICLR 2026
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://seoneun.github.io/" target="_blank">Seong-Eun Hong<sup>1</sup>*</a>,</span>
+            <span class="author-block"><a href="https://tjswodud.github.io/" target="_blank">Jaeyoung Seon<sup>2</sup>*</a>,</span>
+            <span class="author-block"><a href="" target="_blank">Juyeong Hwang<sup>1</sup></a>,</span>
+            <span class="author-block"><a href="" target="_blank">Jonghwan Shin<sup>1</sup></a>,</span>
+            <span class="author-block"><a href="https://siamiz88.github.io/" target="_blank">Hyeongyeop Kang<sup>1</sup></a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> Korea University, <sup>2</sup> Kyung Hee University</span> 
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2602.04292" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2412.00112" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/tjswodud/EventT2M-codes" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container" style="text-align:center;">
+    <video style="width:720px; height:auto; display:block; margin:auto;" controls>
+      <source src="static/figures/Event-T2M_Main.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h2 class="title is-3" style="margin-top:30px;">Abstract</h2>
+    <div class="content" style="text-align:justify; width:720px; margin:auto;">
+      <p>
+        Text-to-motion generation has advanced with diffusion models, yet existing systems often collapse complex multi-action prompts into a single embedding, leading to omissions, reordering, or unnatural transitions. In this work, we shift perspective by introducing a principled definition of an event as the smallest semantically self-contained action or state change in a text prompt that can be temporally aligned with a motion segment. Building on this definition, we propose <b>Event-T2M</b>, a diffusion-based framework that decomposes prompts into events, encodes each with a motion-aware retrieval model, and integrates them through event-based cross-attention in Conformer blocks. Existing benchmarks mix simple and multi-event prompts, making it unclear whether models that succeed on single actions generalize to multi-action cases. To address this, we construct HumanML3D-E, the first benchmark stratified by event count. Experiments on HumanML3D, KIT-ML, and HumanML3D-E show that Event-T2M matches state-of-the-art baselines on standard tests while outperforming them as event complexity increases. Human studies validate the plausibility of our event definition, the reliability of HumanML3D-E, and the superiority of Event-T2M in generating multi-event motions that preserve order and naturalness close to groundtruth. These results establish event-level conditioning as a generalizable principle for advancing text-to-motion generation beyond single-action prompts.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="text-align:center;">
+      <h2 class="title is-3">Framework Overview</h2>
+      <img src="static/figures/Main_Architecture.png" alt="Event-T2M Architecture" style="width:720px; height:auto; display:block; margin:auto;"/>
+      </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="text-align:center;">
+      <h2 class="title is-3">Qualitative Results</h2>  
+      <video style="width:720px; height:auto; display:block; margin:auto;" controls>
+        <source src="static/figures/Event-T2M_Qualitative.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="content" style="text-align:justify; width:720px; margin:auto;">
+      <p>Qualitative results illustrate model outputs for the challenging prompts, which contains several distinct events. Among the methods, <b>Event-T2M</b> is the only one that realizes all actions in the correct sequence while ensuring smooth transitions. In contrast, baselines often shorten the motion, blend distinct events, or substitute unrelated actions. Also, Event-T2M faithfully maintains both event semantics and temporal order.</p>
+      </div>
+      </div>
+  </div>
+</section>
+
+<!-- <section class="section hero is-light">
+  <div class="container" style="text-align:center;">
+    <h2 class="title is-3">BibTeX</h2>
+    <div class="content" style="width:720px; margin:auto; text-align:left;">
+<pre><code>
+@article{hong2024bipo,
+  title={BiPO: Bidirectional Partial Occlusion Network for Text-to-Motion Synthesis},
+  author={Hong, Seong-Eun and Lim, Soobin and Hwang, Juyeong and Chang, Minwook and Kang, Hyeongyeop},
+  journal={arXiv preprint arXiv:2412.00112},
+  year={2024}
+}
+</code></pre>
+    </div>
+  </div>
+</section> -->
+
+<footer class="footer">
+   <div class="columns is-centered">
+     <div class="column is-8">
+       <div class="content">
+        <p>
+          * These authors contributed equally to this work.
+        </p>
+         <p>
+           This website is licensed under a <a rel="license"
+           href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+         Commons Attribution-ShareAlike 4.0 International License</a>.
+       </p>
+       <p>
+         Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+         href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+       </p>
+     </div>
+   </div>
+ </div>
+ </div>
+ </footer>
+
+<script type="text/javascript">
+  var sc_project=12351448; 
+  var sc_invisible=1; 
+  var sc_security="c676de4f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+  alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
